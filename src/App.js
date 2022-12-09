@@ -1,5 +1,4 @@
 import logo from "./logo.svg";
-import Menu from "./assets/menu.png";
 
 import "./App.css";
 import { useState } from "react";
