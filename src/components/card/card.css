@@ -1,0 +1,131 @@
+
+
+.card-container{
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    width: 600px;
+}
+@media only screen and (max-width: 768px) {
+  .card-container{
+    width: 90%;
+  }
+}
+
+
+.card {
+    width: 100%;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px rgb(135, 134, 134); 
+  }
+
+  .up-state {
+    bottom: 15%; 
+    transition: all 1.5s ease-out;
+  }
+  .down-state {
+    bottom: -45%;
+    transition: all 1.5s ease-out;
+ }
+
+ .btn-arrow {
+    background-color: transparent;
+    border: none;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+    position: absolute;
+    top: -74px;
+    z-index: 2;
+  
+  }
+  .bounce { 
+    animation: bounce 0.7s ease infinite;
+  }
+  .rotateArrowDown {
+    animation-name: rotateDown;
+  }
+  .rotateArrowUp {
+    animation-name: rotateUp;
+  }
+  .box-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 20px;
+  }
+  .box-container {
+    width: 120px;
+    height: 120px;
+    box-shadow: 1px 2px 5px rgb(199, 196, 196); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 12px;
+
+  }
+  .image-container {
+    height: 100%;
+    width: 50%;
+  }
+  .image-content{
+    height: 100%;
+  }
+  .text-box {
+    font-size: 14px;
+  }
+  .fadeInBox {
+    opacity: 1;
+    transition: opacity 1s linear;
+  }
+  .fadeOutBox {
+    opacity: 0;
+    transition: opacity 1s linear;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-30px);} 
+    60% {transform: translateY(-15px);} 
+  } 
+  @-webkit-keyframes bounce { 
+    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
+    40% {-webkit-transform: translateY(-30px);} 
+    60% {-webkit-transform: translateY(-15px);} 
+  } 
+  @keyframes rotateDown {
+    0% {transform: rotate(0);} 
+    100%{transform: rotate(180deg);} 
+  } 
+  @-webkit-keyframes rotateDown {
+    0% {transform: rotate(0);} 
+    100%{transform: rotate(180deg);} 
+  }
+  @keyframes rotateUp {
+    0% {transform: rotate(180deg);} 
+    100%{transform: rotate(0deg);} 
+  } 
+  @-webkit-keyframes rotateUp {
+    0% {transform: rotate(180deg);} 
+    100%{transform: rotate(0deg);} 
+  } 
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

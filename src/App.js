@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import Menu from "./assets/menu.png";
+
+import "./App.css";
+import { useState } from "react";
+import Card from "./components/card/Card.tsx";
 
 function App() {
+  const [start, setStart] = useState(false);
+  const translate = "translateY(-10%)";
+
+  const onClickStart = () => {
+    setStart(!start);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="container">
+      <div className="child">
+        <div
+          style={{
+            transform: start ? translate : "none",
+            marginTop: 50,
+          }}
+          className={start ? "min" : "full"}
         >
-          Learn React
-        </a>
-      </header>
+          <img src={logo} className="App-logo" alt="logo" />
+        </div>
+
+       
+        <Card start={start} onClickStart={onClickStart} />
+      </div>
     </div>
   );
 }
