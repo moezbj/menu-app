@@ -1,0 +1,143 @@
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+.items-container {
+  display: flex;
+  
+  width: 60%;
+
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.item-text {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.selected-item-color {
+  color: #e6aa55;
+}
+.bar-item {
+  width: 120px;
+  height: 1px;
+  position: relative;
+  background-color: white;
+}
+
+.circle-item {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  left: 44%;
+  top: -10px;
+  background-color: white;
+}
+.selected-item {
+  background-color: #e6aa55;
+}
+.carousel-container {
+  margin-top: 20px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  position: relative;
+}
+.circle-carousel {
+  position: absolute;
+  left: calc(50% - 10px);
+  bottom: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.intro-circle-1 {
+  left: -20px;
+  top: -10px;
+}
+.intro-circle-2 {
+  right: -20px;
+  top: -10px;
+  left: auto;
+}
+.intro-circle-3 {
+  right: -20px;
+  bottom: -10px;
+  left: auto;
+}
+.intro-circle-4 {
+  left: -20px;
+  bottom: -10px;
+}
+.content-pad {
+  padding: 28px 30px;
+  margin: 10px 30px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+  color: #fff;
+}
+
+p {
+  line-height: 1.7;
+  color: #fff;
+}
+.slider-container {
+  margin: 20px 0px;
+}
+.slide {
+  background-color: transparent !important;
+}
+@media (max-width: 768px) {
+  .nav-container {
+    width: 100%;
+  }
+  .item-text {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .items-container {
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  .bar-item {
+    width: 100px;
+  }
+  .circle-item {
+    left: 41%;
+  }
+  .carousel-container {
+    margin: 20px 15px;
+  }
+  .intro-circle-1 {
+    left: -1px;
+    top: -10px;
+  }
+  .intro-circle-2 {
+    right: -1px;
+    top: -10px;
+    left: auto;
+  }
+  .intro-circle-3 {
+    right: -1px;
+    bottom: -10px;
+    left: auto;
+  }
+  .intro-circle-4 {
+    left: -1px;
+    bottom: -10px;
+  }
+}
