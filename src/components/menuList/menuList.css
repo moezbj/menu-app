@@ -34,7 +34,7 @@
   margin-right: 0;
 }
 .menu-item {
-  height: 70px;
+  height: 78px;
   cursor: pointer;
   transition: height 0.8s ease-in-out;
   overflow: hidden;
@@ -80,6 +80,9 @@
   z-index: 3;
   padding: 0 10px;
   font-weight: 600;
+  border-radius: 10px;
+  border: 1px solid #ffb03b;
+  padding: 3px 5px;
 }
 
 .menu .menu-ingredients {
