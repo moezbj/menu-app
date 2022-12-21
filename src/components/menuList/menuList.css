@@ -40,7 +40,7 @@
   overflow: hidden;
 }
 .open-item {
-  height: 330px;
+  height: 400px;
   transition: height 0.8s ease-in-out;
 }
 
