@@ -1,23 +1,27 @@
-.App-logo {
-  height: 100%;
-  width: 400px;
-  pointer-events: none;
-}
-.open-Logo {
-  transform: translateX(-150%);
-  transition: all 0.4s ease-in-out;
-}
-
 body {
   width: 100vw;
   height: 100vh;
 }
 .full {
   height: 400px;
+  transition: all 1s ease-in-out;
+
 }
 .min {
-  transition: height 1.5s ease-in-out;
-  height: 200px;
+  height: 120px;
+  transition: all 1s ease-in-out;
+
+}
+.App-logo {
+  height: 100%;
+  width: 400px;
+  pointer-events: none;
+}
+.open-Logo {
+  width: 100px;
+  height: 100px;
+  margin-top: 1px;
+  transition: all 1s ease-in-out;
 }
 .container {
   position: relative;
@@ -46,43 +50,41 @@ body {
   position: relative;
   margin-top: 100px;
 }
-
-svg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  fill: none;
-  stroke: #fff;
-  stroke-dasharray: 150 480;
-  stroke-dashoffset: 150;
-  transition: 1s ease-in-out;
+.btn-container {
+  display: flex;
 }
 
-.btn:hover {
-  transition: 1s ease-in-out;
-  background: #e6aa55;
+.btn-menu,
+.btn-book {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: 0.5s;
+  line-height: 1;
+  margin: 0 10px;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  color: #fff;
+  border: 2px solid #ffb03b;
+  background: transparent;
 }
 
-.btn:hover svg {
-  stroke-dashoffset: -480;
-}
-
-.btn span {
-  color: white;
-  font-size: 18px;
-  font-weight: 100;
+.btn-menu:hover,
+.btn-book:hover {
+  background: #ffb03b;
+  color: #fff;
 }
 @media (max-width: 768px) {
-  .App-logo {
-    width: 250px;
-    height: 250px;
-    margin-top: 10px;
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
   }
-  .full {
-    height: 280px;
-  }
-  .open-Logo {
-    transform: translateY(-10%);
-    transition: all 0.4s ease-in-out;
+  .btn-menu {
+    margin-bottom: 50px;
   }
 }

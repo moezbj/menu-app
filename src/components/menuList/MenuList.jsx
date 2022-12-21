@@ -1,25 +1,15 @@
 import React, { useState } from "react";
-import Modal from "react-modal";
-import { useMediaQuery } from "react-responsive";
 
-import Burger from "../../assets/img/burger.png";
+/* import Burger from "../../assets/img/burger.png";
 import Coffe from "../../assets/img/coffee.png";
-import Cake from "../../assets/img/cakes.png";
-import ModelViewer from "../../models/ModelViewer";
-import TestModel from "../../assets/ar/gateau.glb";
-
+import Cake from "../../assets/img/cakes.png"; */
+import MenuItem from "./MenuItem";
+import { menu } from "./data";
 import "./menuList.css";
-const customStyles = {
-  content: {
-    padding: 10,
-    inset: 22,
-  },
-};
 
 const MenuList = ({ items, title }) => {
-  const isTabletOrMobile = useMediaQuery({ maxWidth: 1224 });
-  const [itemSelected, setSelected] = useState(null);
-  const renderImg = () => {
+  const [itemSelected, setSelected] = useState(menu);
+/*   const renderImg = () => {
     let logo = Burger;
     switch (title) {
       case "Menu": {
@@ -39,89 +29,57 @@ const MenuList = ({ items, title }) => {
       }
     }
     return logo;
-  };
+  }; */
   const [open, setOpen] = useState(false);
   const onClickItem = (e) => {
-    setSelected(e);
     setOpen(!open);
   };
+  const filters = ["Show All", "Starters", "Salads", "Specialty"];
+  const onChangeFilter = (f) => {
+    setSelected(null);
 
+    if (f !== "Show All") {
+      let a = menu.filter((m) => m.category === f);
+      setSelected(a);
+    } else {
+      setSelected(menu);
+    }
+  };
   return (
-    <div
-      style={{
-        overflow: "scroll",
-        height: "490px",
-        position: "relative",
-      }}
-    >
-      <ul className="ch-grid">
-        {items.map((e, index) => (
-          <li key={`${e.title}-${index}`}>
-            <div className="ch-item" onClick={() => onClickItem(e)}>
-              <img src={renderImg()} alt="b" className="ch-img" />
-              <div className="ch-info">
-                <h3>{e.title}</h3>
-              </div>
-            </div>
-          </li>
-        ))}
-      </ul>
+    <section id="menu" className="menu">
+      <div className="container-menu">
+        <div className="section-title">
+          <h2>
+            Check our tasty <span>Menu</span>
+          </h2>
+        </div>
 
-      <Modal
-        isOpen={open}
-        onRequestClose={() => setOpen(false)}
-        style={customStyles}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-          }}
-        >
-          <div
-            style={{
-              color: "black",
-              cursor: "pointer",
-              alignSelf: "flex-end",
-            }}
-            onClick={onClickItem}
-          >
-            X Close
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: isTabletOrMobile ? "column" : "row",
-              flex: 1,
-            }}
-          >
-            <div
-              style={{
-                width: isTabletOrMobile ? "100%" : "50%",
-                height: "100%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <ModelViewer modelPath={TestModel} />
-            </div>
-            <div
-              style={{
-                width: isTabletOrMobile ? "100%" : "50%",
-                height: "100%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: isTabletOrMobile ? "flex-start" : "center",
-              }}
-            >
-              {itemSelected?.title}
-            </div>
+        <div className="row">
+          <div className="col-lg-12 d-flex justify-content-center">
+            <ul id="menu-flters">
+              {filters.map((f) => (
+                <li key={f} onClick={() => onChangeFilter(f)}>
+                  {f}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-      </Modal>
-    </div>
+
+        <div className="row menu-container">
+          {itemSelected.map((e) => (
+            <MenuItem
+              key={e.name}
+              onClick={onClickItem}
+              name={e.name}
+              price={e.price}
+              description={e.description}
+              className={open ? "open-item" : ""}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

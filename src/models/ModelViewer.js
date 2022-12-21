@@ -1,23 +1,27 @@
-import React, { Suspense } from "react";
-import { useMediaQuery } from "react-responsive";
+import React from "react";
 
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import GltfModel from "./GltfModels";
+import ModelViewer from "react-ar-viewer";
 
-const ModelViewer = ({ modelPath, position = [0, 0, 0] }) => {
-  const isTabletOrMobile = useMediaQuery({ maxWidth: 1224 });
+const ModelViewerPage = ({ modelPath, position = [0, 0, 0] }) => {
   return (
-    <Canvas camera={{ position: [0, 0, 50], zoom: isTabletOrMobile ? 4 : 6 }}>
-      <ambientLight intensity={0.3} />
-      <spotLight position={[60, 60, 60]} angle={85.15} penumbra={7} />
-      <pointLight position={[60, 60, 60]} />
-      <Suspense fallback={null}>
-        <GltfModel modelPath={modelPath} position={position} />
-        <OrbitControls />
-      </Suspense>
-    </Canvas>
+    <ModelViewer
+      buttonImage={"https://picsum.photos/200/200"}
+      buttonText={"View in your space"}
+      width={"100%"}
+      height={"100%"}
+      src={modelPath}
+      iosSrc={"https://model.usdz"}
+      poster={"https://picsum.photos/200/200"}
+      alt={"Sample usage on component"}
+      cameraControls={true}
+      ar={true}
+      cameraTarget={"0m 0m 0m"}
+      cameraOrbit={"0 deg 0deg 0%"}
+      exposure={1}
+      shadowSoftness={0}
+      autoPlay={true}
+    />
   );
 };
 
-export default ModelViewer;
+export default ModelViewerPage;

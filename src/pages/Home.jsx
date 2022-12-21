@@ -6,10 +6,11 @@ import { useState } from "react";
 
 function App() {
   const [open, setOpen] = useState(false);
+
   return (
     <div className="container">
       <div className="child">
-        <div className="full">
+        <div className={open ? "min" : "full"}>
           <img
             src={logo}
             className={className("App-logo", open ? "open-Logo" : "")}
@@ -17,24 +18,17 @@ function App() {
           />
         </div>
         {!open ? (
-          <button className="btn" onClick={() => setOpen(true)}>
-            <svg
-              width="180px"
-              height="60px"
-              viewBox="0 0 180 60"
-              className="border"
+          <div className="btn-container">
+            <button
+              onClick={() => setOpen(true)}
+              className="btn-menu  animate__animated animate__fadeInUp scrollto"
             >
-              <polyline
-                points="179,1 179,59 1,59 1,1 179,1"
-                className="bg-line"
-              />
-              <polyline
-                points="179,1 179,59 1,59 1,1 179,1"
-                className="hl-line"
-              />
-            </svg>
-            <span>Welcome</span>
-          </button>
+              Our Menu
+            </button>
+            <button className="btn-book animate__animated animate__fadeInUp scrollto">
+              Book a Table
+            </button>
+          </div>
         ) : (
           <Nav open={open} />
         )}
