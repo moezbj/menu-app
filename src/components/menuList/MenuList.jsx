@@ -9,7 +9,9 @@ import "./menuList.css";
 
 const MenuList = ({ items, title }) => {
   const [itemSelected, setSelected] = useState(menu);
-/*   const renderImg = () => {
+  const [itemMenu, setItemMenu] = useState(menu);
+
+  /*   const renderImg = () => {
     let logo = Burger;
     switch (title) {
       case "Menu": {
@@ -32,6 +34,7 @@ const MenuList = ({ items, title }) => {
   }; */
   const [open, setOpen] = useState(false);
   const onClickItem = (e) => {
+    setItemMenu(e);
     setOpen(!open);
   };
   const filters = ["Show All", "Starters", "Salads", "Specialty"];
@@ -74,7 +77,7 @@ const MenuList = ({ items, title }) => {
               name={e.name}
               price={e.price}
               description={e.description}
-              className={open ? "open-item" : ""}
+              className={open && e.name === itemMenu ? "open-item" : ""}
             />
           ))}
         </div>
