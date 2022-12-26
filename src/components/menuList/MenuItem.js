@@ -2,7 +2,6 @@ import React from "react";
 import "./menuList.css";
 import "animate.css";
 import ModelViewer from "../../models/ModelViewer";
-// import modeltest from "../../assets/ar/gateau.glb";
 import classNames from "../../utils/classNames";
 
 const MenuItem = ({
@@ -23,23 +22,7 @@ const MenuItem = ({
       )}
     >
       <div className="menu-content">
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-          }}
-        >
-         {/*  <img
-            style={{
-              width: "90px",
-              height: "90px",
-              borderRadius: "50%",
-            }}
-            src={img}
-            alt={name}
-          /> */}
-          <span>{name}</span>
-        </div>
+        <span>{name}</span>
 
         <span onClick={() => onClick(name)}>{price}</span>
       </div>
@@ -50,7 +33,7 @@ const MenuItem = ({
           height: "85%",
         }}
       >
-        <ModelViewer modelPath={model} />
+        <ModelViewer modelPath={model} poster={img} />
       </div>
     </div>
   );

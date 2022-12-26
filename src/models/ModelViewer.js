@@ -2,7 +2,7 @@ import React from "react";
 import ModelViewer from "react-ar-viewer";
 import "react-ar-viewer/dist/index.css";
 
-const ModelViewerPage = ({ modelPath, position = [0, 0, 0] }) => {
+const ModelViewerPage = ({ modelPath,poster, position = [0, 0, 0] }) => {
   return (
     <ModelViewer
       buttonImage={"https://picsum.photos/200/200"}
@@ -11,7 +11,7 @@ const ModelViewerPage = ({ modelPath, position = [0, 0, 0] }) => {
       height={"100%"}
       src={modelPath}
       iosSrc={"https://model.usdz"}
-      poster={"../assets/img/loading-load.gif"}
+      poster={poster}
       alt={"Sample usage on component"}
       cameraControls={true}
       ar={true}
