@@ -9,6 +9,11 @@
 .open-nav {
   animation: fadeIn 1s ease-in-out;
   transition: all 0.8s ease-in-out;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.open-nav::-webkit-scrollbar {
+  display: none;
 }
 .items-container {
   display: flex;

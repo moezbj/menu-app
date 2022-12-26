@@ -1,66 +1,107 @@
-const salads = [
+import Cake1 from "../../assets/MENU/desert/cake1.png";
+import Cake2 from "../../assets/MENU/desert/cake2.png";
+import Cake3 from "../../assets/MENU/desert/cake3.png";
+
+import Pizza1 from "../../assets/MENU/pizza/1.png";
+import Pizza2 from "../../assets/MENU/pizza/2.png";
+import Pizza3 from "../../assets/MENU/pizza/3.png";
+
+import Plat1 from "../../assets/MENU/plat/1.png";
+import plat2 from "../../assets/MENU/plat/2.png";
+import plat3 from "../../assets/MENU/plat/3.png";
+
+import cakeModel1 from "../../assets/MENU/desert/cake1.glb";
+import cakeModel2 from "../../assets/MENU/desert/cake2.glb";
+import cakeModel3 from "../../assets/MENU/desert/cake3.glb";
+
+import pizzaModel1 from "../../assets/MENU/pizza/1.glb";
+import pizzaModel2 from "../../assets/MENU/pizza/2.glb";
+import pizzaModel3 from "../../assets/MENU/pizza/3.glb";
+
+import platModel1 from "../../assets/MENU/plat/1.glb";
+import platModel2 from "../../assets/MENU/plat/2.glb";
+import platModel3 from "../../assets/MENU/plat/3.glb";
+
+const Pizza = [
   {
-    category: "Salads",
-    name: "Caesar Selections",
+    category: "Pizza",
+    name: "Pizza Margherita",
     price: "$8.95",
-    description: "Lorem, deren, trataro, filede, nerada",
+    description: "la tomate, la mozzarella et le basilic",
+    img: Pizza1,
+    model: pizzaModel1,
   },
   {
-    category: "Salads",
-    name: "Greek Salad",
+    category: "Pizza",
+    name: "Pizza 4 saisons",
     price: "$9.95",
-    description: "Fresh spinach, crisp romaine, tomatoes, and Greek olives",
+    description: "des olives noires, des artichauts et du jambon",
+    img: Pizza2,
+    model: pizzaModel2,
   },
   {
-    category: "Salads",
-    name: "Spinach Salad",
+    category: "Pizza",
+    name: "Pizza Pepperoni",
     price: "$9.95",
-    description:
-      " Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette",
+    description: "Celui-ci est à base de saucisse fraîche et de salami",
+    img: Pizza3,
+    model: pizzaModel3,
   },
 ];
-const starters = [
+const Desert = [
   {
-    category: "Starters",
+    category: "Desert",
     name: "Lobster Bisque",
     price: "$5.95",
     description: "Lorem, deren, trataro, filede, nerada",
+    img: Cake1,
+    model: cakeModel1,
   },
   {
-    category: "Starters",
+    category: "Desert",
     name: "Crab Cake",
     price: "$7.95",
     description:
       " A delicate crab cake served on a toasted roll with lettuce andtartar sauce",
+    img: Cake2,
+    model: cakeModel2,
   },
   {
-    category: "Starters",
+    category: "Desert",
     name: "Mozzarella Stick",
     price: "$4.95",
     description: " Lorem, deren, trataro, filede, nerada",
+    img: Cake3,
+    model: cakeModel3,
   },
 ];
-const specialty = [
+const Plat = [
   {
-    category: "Specialty",
+    category: "Plat",
     name: "Lobster Roll",
     price: "$12.95",
     description:
       " Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll",
+    img: Plat1,
+    model: platModel1,
   },
   {
-    category: "Specialty",
+    category: "Plat",
     name: "Tuscan Grilled",
     price: "$9.95",
     description:
       "Grilled chicken with provolone, artichoke hearts, and roasted red pesto",
+    img: plat2,
+    model: platModel2,
   },
   {
-    category: "Specialty",
+    category: "Plat",
     name: "Bread barrel",
     price: "$6.95",
     description: "Lorem, deren, trataro, filede, nerada",
+    img: plat3,
+    model: platModel3,
   },
 ];
-const menu = [...salads, ...starters, ...specialty];
+const menu = [...Pizza, ...Desert, ...Plat];
 export { menu };

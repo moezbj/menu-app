@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 
-/* import Burger from "../../assets/img/burger.png";
-import Coffe from "../../assets/img/coffee.png";
-import Cake from "../../assets/img/cakes.png"; */
 import MenuItem from "./MenuItem";
 import { menu } from "./data";
 import "./menuList.css";
@@ -37,7 +34,7 @@ const MenuList = ({ items, title }) => {
     setItemMenu(e);
     setOpen(!open);
   };
-  const filters = ["Show All", "Starters", "Salads", "Specialty"];
+  const filters = ["Show All", "Pizza", "Desert", "Plat"];
   const onChangeFilter = (f) => {
     setSelected(null);
 
@@ -57,8 +54,8 @@ const MenuList = ({ items, title }) => {
           </h2>
         </div>
 
-        <div className="row">
-          <div className="col-lg-12 d-flex justify-content-center">
+        <div>
+          <div className="justify-content-center">
             <ul id="menu-flters">
               {filters.map((f) => (
                 <li key={f} onClick={() => onChangeFilter(f)}>
@@ -69,7 +66,7 @@ const MenuList = ({ items, title }) => {
           </div>
         </div>
 
-        <div className="row menu-container">
+        <div className="menu-container">
           {itemSelected.map((e) => (
             <MenuItem
               key={e.name}
@@ -77,6 +74,8 @@ const MenuList = ({ items, title }) => {
               name={e.name}
               price={e.price}
               description={e.description}
+              img={e.img}
+              model={e.model}
               className={open && e.name === itemMenu ? "open-item" : ""}
             />
           ))}

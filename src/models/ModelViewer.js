@@ -1,17 +1,17 @@
 import React from "react";
-import "react-ar-viewer/dist/index.css";
 import ModelViewer from "react-ar-viewer";
+import "react-ar-viewer/dist/index.css";
 
 const ModelViewerPage = ({ modelPath, position = [0, 0, 0] }) => {
   return (
     <ModelViewer
       buttonImage={"https://picsum.photos/200/200"}
-      buttonText={"View in your space"}
+      buttonText={"View"}
       width={"100%"}
       height={"100%"}
       src={modelPath}
       iosSrc={"https://model.usdz"}
-      poster={"https://picsum.photos/200/200"}
+      poster={"../assets/img/loading.gif"}
       alt={"Sample usage on component"}
       cameraControls={true}
       ar={true}
@@ -24,6 +24,7 @@ const ModelViewerPage = ({ modelPath, position = [0, 0, 0] }) => {
       autoPlay={true}
       autoRotate={true}
       loading={"eager"}
+      
     />
   );
 };
