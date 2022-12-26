@@ -17,8 +17,7 @@ const ModelViewerPage = ({ modelPath,poster, position = [0, 0, 0] }) => {
       ar={true}
       arModes={"webxr scene-viewer quick-look"}
       arScale={"auto"}
-      cameraTarget={"0m 0m 0m"}
-      cameraOrbit={"0 deg 0deg 0%"}
+    
       exposure={1}
       shadowSoftness={0}
       autoPlay={true}
