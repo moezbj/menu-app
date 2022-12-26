@@ -11,7 +11,7 @@ const ModelViewerPage = ({ modelPath, position = [0, 0, 0] }) => {
       height={"100%"}
       src={modelPath}
       iosSrc={"https://model.usdz"}
-      poster={"../assets/img/loading.gif"}
+      poster={"../assets/img/loading-load.gif"}
       alt={"Sample usage on component"}
       cameraControls={true}
       ar={true}
