@@ -15,9 +15,9 @@ const ModelViewerPage = ({ modelPath,poster, position = [0, 0, 0] }) => {
       alt={"Sample usage on component"}
       cameraControls={true}
       ar={true}
-      arModes={"scene-viewer"}    
-      exposure={1}
-      shadowSoftness={0}
+      arModes={"scene-viewer"}
+      cameraTarget={'0m 0m 0m'}
+        cameraOrbit={'0 deg 0deg 0%'} 
       autoPlay={true}
       autoRotate={true}
       loading={"eager"}
