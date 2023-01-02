@@ -15,7 +15,7 @@ const ModelViewerPage = ({ modelPath,poster, position = [0, 0, 0] }) => {
       alt={"Sample usage on component"}
       cameraControls={true}
       ar={true}
-      arModes={"webxr scene-viewer quick-look"}
+      arModes={"quick-look"}
       arScale={"auto"}
     
       exposure={1}
