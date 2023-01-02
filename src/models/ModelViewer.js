@@ -2,7 +2,7 @@ import React from "react";
 import ModelViewer from "react-ar-viewer";
 import "react-ar-viewer/dist/index.css";
 
-const ModelViewerPage = ({ modelPath,poster, position = [0, 0, 0] }) => {
+const ModelViewerPage = ({ modelPath, poster, position = [0, 0, 0] }) => {
   return (
     <ModelViewer
       buttonImage={"https://picsum.photos/200/200"}
@@ -15,15 +15,10 @@ const ModelViewerPage = ({ modelPath,poster, position = [0, 0, 0] }) => {
       alt={"Sample usage on component"}
       cameraControls={true}
       ar={true}
-      arModes={"webxr scene-viewer quick-look"}
-      arScale={"auto"}
-    
       exposure={1}
       shadowSoftness={0}
-      autoPlay={true}
       autoRotate={true}
-      loading={"eager"}
-      
+      autoPlay={true}
     />
   );
 };
