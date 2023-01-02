@@ -1,14 +1,14 @@
-import Cake1 from "../../assets/MENU/desert/cake1.png";
-import Cake2 from "../../assets/MENU/desert/cake2.png";
-import Cake3 from "../../assets/MENU/desert/cake3.png";
+import Cake1 from "../../assets/MENU/desert/cake1.webp";
+import Cake2 from "../../assets/MENU/desert/cake2.webp";
+import Cake3 from "../../assets/MENU/desert/cake3.webp";
 
-import Pizza1 from "../../assets/MENU/pizza/1.png";
-import Pizza2 from "../../assets/MENU/pizza/2.png";
-import Pizza3 from "../../assets/MENU/pizza/3.png";
+import Pizza1 from "../../assets/MENU/pizza/1.webp";
+import Pizza2 from "../../assets/MENU/pizza/2.webp";
+import Pizza3 from "../../assets/MENU/pizza/3.webp";
 
-import Plat1 from "../../assets/MENU/plat/1.png";
-import plat2 from "../../assets/MENU/plat/2.png";
-import plat3 from "../../assets/MENU/plat/3.png";
+import Plat1 from "../../assets/MENU/plat/1.webp";
+import plat2 from "../../assets/MENU/plat/2.webp";
+import plat3 from "../../assets/MENU/plat/3.webp";
 
 import cakeModel1 from "../../assets/MENU/desert/cake1.glb";
 import cakeModel2 from "../../assets/MENU/desert/cake2.glb";
