@@ -22,8 +22,8 @@ const ModelViewerPage = ({ modelPath, poster, position = [0, 0, 0] }) => {
       autoPlay={true}
       autoRotate={true}
       loading={"eager"}
-      shadowIntensity={1}
-      environmentImage="legacy"
+      shadowSoftness={1}
+      exposure={1}
     />
   );
 };
