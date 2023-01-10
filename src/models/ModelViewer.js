@@ -24,6 +24,7 @@ const ModelViewerPage = ({ modelPath,modelIos, poster, position = [0, 0, 0] }) =
       loading={"eager"}
       shadowSoftness={1}
       exposure={1}
+      modelCacheSize={5}
     />
   );
 };
