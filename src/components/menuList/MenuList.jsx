@@ -7,28 +7,6 @@ import "./menuList.css";
 const MenuList = ({ items, title }) => {
   const [itemSelected, setSelected] = useState(menu);
   const [itemMenu, setItemMenu] = useState(menu);
-
-  /*   const renderImg = () => {
-    let logo = Burger;
-    switch (title) {
-      case "Menu": {
-        logo = Burger;
-        break;
-      }
-      case "Snacks": {
-        logo = Cake;
-        break;
-      }
-      case "Drinks": {
-        logo = Coffe;
-        break;
-      }
-      default: {
-        logo = Burger;
-      }
-    }
-    return logo;
-  }; */
   const [open, setOpen] = useState(false);
   const onClickItem = (e) => {
     setItemMenu(e);
@@ -76,6 +54,7 @@ const MenuList = ({ items, title }) => {
               description={e.description}
               img={e.img}
               model={e.model}
+              modelIos={e.modelIos}
               className={open && e.name === itemMenu ? "open-item" : ""}
             />
           ))}

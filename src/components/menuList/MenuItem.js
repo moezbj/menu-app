@@ -12,6 +12,7 @@ const MenuItem = ({
   img,
   model,
   onClick,
+  modelIos
 }) => {
   return (
     <div
@@ -33,7 +34,7 @@ const MenuItem = ({
           height: "85%",
         }}
       >
-        <ModelViewer modelPath={model} poster={img} />
+        <ModelViewer modelPath={model} poster={img} modelIos={modelIos} />
       </div>
     </div>
   );
