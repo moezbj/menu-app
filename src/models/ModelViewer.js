@@ -8,7 +8,7 @@ const ModelViewerPage = ({
   poster,
   position = [0, 0, 0],
 }) => {
-  console.log('haah')
+  console.log("haah");
   return (
     <ModelViewer
       buttonImage={"https://picsum.photos/200/200"}
@@ -18,8 +18,13 @@ const ModelViewerPage = ({
       src={modelPath}
       cameraControls={true}
       ar={true}
-      arModes='quick-look'
+      arModes="quick-look scene-viewer webxr"
       arScale="auto"
+      cameraTarget={"0m 0m 0m"}
+      cameraOrbit={"0 deg 0deg 0%"}
+      exposure={1}
+      shadowSoftness={0}
+      autoPlay={true}
     />
   );
 };
