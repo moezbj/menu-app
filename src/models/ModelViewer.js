@@ -16,10 +16,11 @@ const ModelViewerPage = ({
       width={"100%"}
       height={"100%"}
       src={modelPath}
+      iosSrc={"../assets/MENU/example.usdz"}
       poster={poster}
       cameraControls={true}
       ar={true}
-      arModes='webxr scene-viewer quick-look'
+      arModes='quick-look'
       arScale="auto"
     />
   );
