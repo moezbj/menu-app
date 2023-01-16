@@ -6,7 +6,6 @@ const ModelViewerPage = ({
   modelPath,
   modelIos,
   poster,
-  position = [0, 0, 0],
 }) => {
   console.log("haah");
   return (
@@ -16,6 +15,7 @@ const ModelViewerPage = ({
       width={"100%"}
       height={"100%"}
       src={modelPath}
+      poster={poster}
       cameraControls={true}
       ar={true}
       arModes="quick-look scene-viewer webxr"
