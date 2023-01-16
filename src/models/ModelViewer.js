@@ -8,6 +8,7 @@ const ModelViewerPage = ({
   poster,
   position = [0, 0, 0],
 }) => {
+  console.log('haah')
   return (
     <ModelViewer
       buttonImage={"https://picsum.photos/200/200"}
@@ -15,7 +16,7 @@ const ModelViewerPage = ({
       width={"100%"}
       height={"100%"}
       src={modelPath}
-      iosSrc={modelIos}
+      iosSrc={"../assets/MENU/example.usdz"}
       poster={poster}
       alt={"Sample usage on component"}
       cameraControls={true}
