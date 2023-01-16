@@ -16,7 +16,6 @@ const ModelViewerPage = ({
       width={"100%"}
       height={"100%"}
       src={modelPath}
-      iosSrc={modelPath}
       poster={poster}
       cameraControls={true}
       ar={true}
