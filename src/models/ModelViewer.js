@@ -16,21 +16,12 @@ const ModelViewerPage = ({
       width={"100%"}
       height={"100%"}
       src={modelPath}
-      iosSrc={modelPath}
+      iosSrc={"../assets/MENU/example.usdz"}
       poster={poster}
-      alt={"Sample usage on component"}
       cameraControls={true}
       ar={true}
-      arModes={"scene-viewer"}
-      cameraTarget={"0m 1.5m -0.5m"}
-      cameraOrbit={"0 deg 0deg 0%"}
-      arScale={"auto"}
-      autoPlay={true}
-      autoRotate={true}
-      loading={"eager"}
-      shadowSoftness={1}
-      exposure={1}
-      modelCacheSize={5}
+      arModes='webxr scene-viewer quick-look'
+      arScale="auto"
     />
   );
 };
