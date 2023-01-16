@@ -10,9 +10,9 @@ import Plat1 from "../../assets/MENU/plat/1.webp";
 import plat2 from "../../assets/MENU/plat/2.webp";
 import plat3 from "../../assets/MENU/plat/3.webp";
 
-import cakeModel1 from "../../assets/MENU/cube-test.glb";
-import cakeModel2 from "../../assets/MENU/cube-test.glb";
-import cakeModel3 from "../../assets/MENU/cube-test.glb";
+import cakeModel1 from "../../assets/MENU/desert/cake1.glb";
+import cakeModel2 from "../../assets/MENU/desert/cake2.glb";
+import cakeModel3 from "../../assets/MENU/desert/cake3.glb";
 
 import pizzaModel1 from "../../assets/MENU/pizza/1.glb";
 import pizzaModel2 from "../../assets/MENU/pizza/2.glb";
