@@ -20,7 +20,7 @@ import pizzaModel3 from "../../assets/MENU/pizza/3.glb";
 
 import platModel1 from "../../assets/MENU/plat/new1.glb";
 import platModel2 from "../../assets/MENU/plat/new1-hg.glb";
-import platModel3 from "../../assets/MENU/plat/3.glb";
+import platModel3 from "../../assets/MENU/plat/new3.glb";
 
 const Pizza = [
   {
