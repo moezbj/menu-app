@@ -23,8 +23,8 @@ const ModelViewerPage = ({
       cameraTarget={"0m 0m 0m"}
       cameraOrbit={"0 deg 0deg 0%"}
       exposure={1}
-      shadowSoftness={0}
-      shadowIntensity={0}
+      shadowSoftness={1}
+      shadowIntensity={1}
       autoPlay={true}
     />
   );
