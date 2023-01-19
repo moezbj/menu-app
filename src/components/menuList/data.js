@@ -18,10 +18,6 @@ import pizzaModel1 from "../../assets/MENU/pizza/1.glb";
 import pizzaModel2 from "../../assets/MENU/pizza/2.glb";
 import pizzaModel3 from "../../assets/MENU/pizza/3.glb";
 
-import pizzaModel01 from "../../assets/MENU/pizza/1.usdz";
-import pizzaModel02 from "../../assets/MENU/pizza/2.usdz";
-import pizzaModel03 from "../../assets/MENU/pizza/3.usdz";
-
 import platModel1 from "../../assets/MENU/plat/new1.glb";
 import platModel2 from "../../assets/MENU/plat/new1-hg.glb";
 import platModel3 from "../../assets/MENU/plat/3.glb";
@@ -34,7 +30,6 @@ const Pizza = [
     description: "la tomate, la mozzarella et le basilic",
     img: Pizza1,
     model: pizzaModel1,
-    modelIos:pizzaModel01
   },
   {
     category: "Pizza",
@@ -43,7 +38,6 @@ const Pizza = [
     description: "des olives noires, des artichauts et du jambon",
     img: Pizza2,
     model: pizzaModel2,
-    modelIos:pizzaModel02
   },
   {
     category: "Pizza",
@@ -52,7 +46,6 @@ const Pizza = [
     description: "Celui-ci est à base de saucisse fraîche et de salami",
     img: Pizza3,
     model: pizzaModel3,
-    modelIos:pizzaModel03
   },
 ];
 const Desert = [
