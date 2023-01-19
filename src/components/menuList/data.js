@@ -22,8 +22,8 @@ import pizzaModel01 from "../../assets/MENU/pizza/1.usdz";
 import pizzaModel02 from "../../assets/MENU/pizza/2.usdz";
 import pizzaModel03 from "../../assets/MENU/pizza/3.usdz";
 
-import platModel1 from "../../assets/MENU/plat/1.glb";
-import platModel2 from "../../assets/MENU/plat/2.glb";
+import platModel1 from "../../assets/MENU/plat/new1.glb";
+import platModel2 from "../../assets/MENU/plat/new1-hg.glb";
 import platModel3 from "../../assets/MENU/plat/3.glb";
 
 const Pizza = [

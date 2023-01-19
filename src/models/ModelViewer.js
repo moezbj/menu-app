@@ -24,6 +24,7 @@ const ModelViewerPage = ({
       cameraOrbit={"0 deg 0deg 0%"}
       exposure={1}
       shadowSoftness={0}
+      shadowIntensity={0}
       autoPlay={true}
     />
   );
