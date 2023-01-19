@@ -12,7 +12,7 @@ const MenuItem = ({
   img,
   model,
   onClick,
-  modelIos
+  modelIos,
 }) => {
   return (
     <div
@@ -22,10 +22,10 @@ const MenuItem = ({
         }`
       )}
     >
-      <div className="menu-content">
+      <div onClick={() => onClick(name)} className="menu-content">
         <span>{name}</span>
 
-        <span onClick={() => onClick(name)}>{price}</span>
+        <span>{price}</span>
       </div>
       <div className="menu-ingredients">{description}</div>
       <div
