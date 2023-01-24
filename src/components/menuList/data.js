@@ -6,9 +6,9 @@ import Pizza1 from "../../assets/MENU/pizza/1.webp";
 import Pizza2 from "../../assets/MENU/pizza/2.webp";
 import Pizza3 from "../../assets/MENU/pizza/3.webp";
 
-import Plat1 from "../../assets/MENU/plat/1.webp";
-import plat2 from "../../assets/MENU/plat/2.webp";
-import plat3 from "../../assets/MENU/plat/3.webp";
+import Plat1 from "../../assets/MENU/plat/burger.webp";
+import plat2 from "../../assets/MENU/plat/sfefed.webp";
+import plat3 from "../../assets/MENU/plat/steak.webp";
 
 import cakeModel1 from "../../assets/MENU/desert/cake1.glb";
 import cakeModel2 from "../../assets/MENU/desert/cake2.glb";
@@ -18,9 +18,9 @@ import pizzaModel1 from "../../assets/MENU/pizza/1.glb";
 import pizzaModel2 from "../../assets/MENU/pizza/2.glb";
 import pizzaModel3 from "../../assets/MENU/pizza/3.glb";
 
-import platModel1 from "../../assets/MENU/plat/new1.glb";
-import platModel2 from "../../assets/MENU/plat/new1-hg.glb";
-import platModel3 from "../../assets/MENU/plat/new3.glb";
+import platModel1 from "../../assets/MENU/plat/burger.glb";
+import platModel2 from "../../assets/MENU/plat/sfefed.glb";
+import platModel3 from "../../assets/MENU/plat/STEAK.glb";
 
 const Pizza = [
   {
