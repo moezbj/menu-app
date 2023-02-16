@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#1D1D1B;stroke-width:6;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#1D1D1B;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:#FFCE6D;stroke:#1D1D1B;stroke-width:6;stroke-miterlimit:10;}
+	.st3{fill:#FF9F01;stroke:#1D1D1B;stroke-width:6;stroke-miterlimit:10;}
+	.st4{fill:#E2655F;stroke:#1D1D1B;stroke-width:6;stroke-miterlimit:10;}
+	.st5{fill:#FF9F01;}
+	.st6{fill:#FFCE6D;}
+	.st7{fill:#E2655F;}
+</style>
+<path class="st2" d="M242.78,269.22v-125.1c-69.1,0-125.09,56.04-125.09,125.1c0,69.1,55.99,125.09,125.09,125.09
+	s125.1-55.99,125.1-125.09H242.78z"/>
+<path class="st3" d="M397.77,269.22c0,85.6-69.38,154.98-154.99,154.98c-85.6,0-154.98-69.38-154.98-154.98
+	c0-85.56,69.38-154.99,154.98-154.99v29.89c-69.1,0-125.09,56.04-125.09,125.1c0,69.1,55.99,125.09,125.09,125.09
+	s125.1-55.99,125.1-125.09H397.77z"/>
+<path class="st2" d="M367.88,269.22c0,69.1-56,125.09-125.1,125.09s-125.09-55.99-125.09-125.09c0-69.06,55.99-125.1,125.09-125.1
+	v125.1H367.88z"/>
+<circle class="st4" cx="180.72" cy="197.01" r="11.75"/>
+<circle class="st4" cx="211.16" cy="236.46" r="9.43"/>
+<circle class="st4" cx="211.16" cy="299.6" r="9.43"/>
+<circle class="st4" cx="294.02" cy="343.11" r="13.63"/>
+<circle class="st4" cx="261.93" cy="308.85" r="5.65"/>
+<circle class="st4" cx="320.27" cy="303.19" r="6.99"/>
+<path class="st2" d="M394.31,242.78h-125.1v-125.1C338.32,117.69,394.31,173.73,394.31,242.78z"/>
+<path class="st3" d="M424.2,242.78h-29.89c0-69.05-56-125.1-125.1-125.1V87.8C354.82,87.8,424.2,157.23,424.2,242.78z"/>
+<circle class="st4" cx="306.83" cy="158.83" r="9.43"/>
+<circle class="st4" cx="304.53" cy="209.38" r="5.65"/>
+<circle class="st4" cx="348.05" cy="190.44" r="6.99"/>
+<circle class="st4" cx="153.45" cy="283.47" r="11.75"/>
+<circle class="st4" cx="165.2" cy="230.16" r="6.29"/>
+<circle class="st4" cx="187.02" cy="337.01" r="6.29"/>
+<circle class="st4" cx="233.18" cy="352.54" r="6.99"/>
+<circle class="st4" cx="220.59" cy="179.3" r="6.29"/>
+</svg>

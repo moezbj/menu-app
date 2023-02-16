@@ -1,5 +1,11 @@
 .section-title {
   color: #fff;
+  padding-left: 20px;
+  
+}
+.justify-content-center {
+  display: flex;
+  justify-content: center;
 }
 .menu #menu-flters {
   padding: 0;
@@ -7,12 +13,12 @@
   list-style: none;
   text-align: center;
   border-radius: 50px;
+  display: flex;
+  flex-direction: row;
 }
 
 .menu #menu-flters li {
   cursor: pointer;
-  display: inline-block;
-  padding: 8px 16px 10px 16px;
   font-size: 14px;
   font-weight: 500;
   line-height: 1;
@@ -22,6 +28,11 @@
   background: #fff;
   border: 2px solid #ffb03b;
   border-radius: 50px;
+  width: 60px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .menu #menu-flters li:hover,
@@ -29,60 +40,37 @@
   color: #fff;
   background: #ffb03b;
 }
-
+.icon_filter {
+  width: 55px;
+  height: auto;
+}
+.icon_filter_item {
+  width: 100%;
+  height: 100%;
+}
 .menu #menu-flters li:last-child {
   margin-right: 0;
 }
 .menu-item {
-  height: 78px;
+  height: 248px;
   cursor: pointer;
-  transition: height 0.8s ease-in-out;
   overflow: hidden;
-}
-.open-item {
-  height: 450px;
-  transition: height 0.8s ease-in-out;
+  background: #ffffff;
+  box-shadow: 18.2143px 18.2143px 36.4286px rgba(211, 209, 216, 0.25);
+  border-radius: 18.2143px;
+  margin: 15px 0px;
 }
 
 .menu .menu-content {
-  margin-top: 30px;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
   position: relative;
+  margin-top: 27px;
 }
-
-.menu .menu-content::after {
-  content: "......................................................................"
-    "...................................................................."
-    "....................................................................";
-  position: absolute;
-  left: 20px;
-  right: 0;
-  top: -4px;
-  z-index: 1;
-  color: #dad8d4;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-}
-
-.menu .menu-content a {
-  padding-right: 10px;
-  background: #fff;
-  position: relative;
-  z-index: 3;
-  font-weight: 700;
-  color: #ff9b08;
-}
-
-.menu .menu-content span {
-  background: #fff;
-  position: relative;
-  z-index: 3;
-  padding: 0 10px;
-  font-weight: 600;
-  border-radius: 10px;
-  border: 1px solid #ffb03b;
-  padding: 3px 5px;
+.menu .menu-content .img-food {
+  border-radius: 18.2143px;
+  width: 100%;
 }
 
 .menu .menu-ingredients {
@@ -90,8 +78,108 @@
   font-size: 14px;
   font-family: "Comic Neue", sans-serif;
   line-height: 22px;
-  color: #ffb03b;
+  background-color: #ffb03b;
+  color: #fff;
+  height: 70px;
+  border-radius: 18.2143px;
+  padding: 4px;
 }
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  background: linear-gradient(214.16deg, #0b0f0e 48.05%, #212226 98.73%);
+}
+.modal-container h1 {
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100px;
+}
+
+.icon_close {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffb03b;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.icon_close span {
+  font-size: 18px;
+  font-weight: bolder;
+  color: #fff;
+}
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.modal_body {
+  width: 80%;
+}
+.description-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.description-item .description-name {
+  color: #dcdce4;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+}
+.description-item .description-price {
+  color: #ff7b2c;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 20px;
+}
+.description-text {
+  color: #dcdce4;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+}
+.btn-order {
+  width: 279px;
+  height: 54px;
+  background: linear-gradient(270deg, #db8f39 0%, #efb159 100%);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  gap: 8px;
+  border: none;
+  margin-top: 40px;
+}
+.btn-order span {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
 @media (max-width: 992px) {
   .specials .nav-link {
     border: 0;

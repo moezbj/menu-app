@@ -1,40 +1,31 @@
 import logo from "../assets/img/Comp_1.gif";
-import Nav from "../components/nav/Nav";
-import className from "../utils/classNames";
+import { useNavigate } from "react-router-dom";
 import "../App.css";
-import { useState } from "react";
 
-function App() {
-  const [open, setOpen] = useState(false);
-
+const App = () => {
+  const navigation = useNavigate();
   return (
     <div className="container">
       <div className="child">
-        <div className={open ? "min" : "full"}>
-          <img
-            src={logo}
-            className={className("App-logo", open ? "open-Logo" : "")}
-            alt="logo"
-          />
+        <div className={"full"}>
+          <div className="circle circle1"></div>
+          <div className="circle circle2"></div>
+          <div className="circle circle3"></div>
+          <img src={logo} className={"App-logo"} alt="logo" />
         </div>
-        {!open ? (
-          <div className="btn-container">
-            <button
-              onClick={() => setOpen(true)}
-              className="btn-menu  animate__animated animate__fadeInUp scrollto"
-            >
-              Our Menu
-            </button>
-            <button className="btn-book animate__animated animate__fadeInUp scrollto">
-              Book a Table
-            </button>
-          </div>
-        ) : (
-          <Nav open={open} />
-        )}
+        <h3 className="text_white">Satisfying Taste</h3>
+        <h3 className="text_orange">Endless Possibilities</h3>
+        <div className="btn-container">
+          <button
+            className="btn-book animate__animated animate__fadeInUp scrollto"
+            onClick={() => navigation("/list")}
+          >
+            Book a Table
+          </button>
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default App;

@@ -50,7 +50,7 @@ const Pizza = [
 ];
 const Desert = [
   {
-    category: "Desert",
+    category: "Deserts",
     name: "Lobster Bisque",
     price: "$5.95",
     description: "Lorem, deren, trataro, filede, nerada",
@@ -58,7 +58,7 @@ const Desert = [
     model: cakeModel1,
   },
   {
-    category: "Desert",
+    category: "Deserts",
     name: "Crab Cake",
     price: "$7.95",
     description:
@@ -67,7 +67,7 @@ const Desert = [
     model: cakeModel2,
   },
   {
-    category: "Desert",
+    category: "Deserts",
     name: "Mozzarella Stick",
     price: "$4.95",
     description: " Lorem, deren, trataro, filede, nerada",
