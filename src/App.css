@@ -63,7 +63,7 @@ body {
   animation-delay: 0.8s;
   color: #fff;
   border: 2px solid #ffb03b;
-  background: transparent;
+  background: #ffb03b;
 }
 
 .btn-book:hover {

@@ -5,11 +5,11 @@ import "./menuList.css";
 
 const MenuItem = ({ name, price, description, img, onClick }) => {
   return (
-    <div className={classNames(`menu-item animate__animated animate__zoomIn `)}>
+    <div className={classNames(`menu-item animate__animated animate__zoomIn `)} onClick={() => onClick(name)}>
       <div className="price-container">
         <span className="price-item">{price}</span>
       </div>
-      <div onClick={() => onClick(name)} className="menu-content">
+      <div  className="menu-content">
         <img src={img} alt="img" className="img-food" />
       </div>
       <div className="menu-ingredients">
