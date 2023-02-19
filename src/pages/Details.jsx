@@ -26,7 +26,6 @@ const Details = () => {
           />
         </div>
       </div>
-
       <div className="modal-content">
         <div className="modal_body">
           <h1>{name}</h1>
