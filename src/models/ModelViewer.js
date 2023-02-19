@@ -1,7 +1,7 @@
 import React from "react";
 import ModelViewer from "react-ar-viewer";
 import "react-ar-viewer/dist/index.css";
-import './model.css'
+
 const ModelViewerPage = ({
   modelPath,
   modelIos,
@@ -11,7 +11,7 @@ const ModelViewerPage = ({
   return (
     <ModelViewer
       buttonImage={"https://picsum.photos/200/200"}
-      buttonText={"Ar"}
+      buttonText={"View"}
       width={"100%"}
       height={"100%"}
       src={modelPath}
