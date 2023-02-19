@@ -1,4 +1,10 @@
 ._2iLxz {
-  width: 77%;
-  margin-bottom: 20px;
+  width: 160px;
+  border: none!important;
+  left:88% !important;
+  bottom: -45px !important;
+  z-index: 3;
+  display: block !important;
+  background-color: transparent !important;
+  color: #db8f39 !important;
 }

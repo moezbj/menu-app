@@ -107,6 +107,6 @@ body {
   .btn-container {
     display: flex;
     flex-direction: column;
-    margin-top: 80px;
+    margin-top: 40px;
   }
 }

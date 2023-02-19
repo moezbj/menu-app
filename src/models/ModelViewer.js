@@ -1,17 +1,14 @@
 import React from "react";
 import ModelViewer from "react-ar-viewer";
+import "./model.css";
 import "react-ar-viewer/dist/index.css";
 
-const ModelViewerPage = ({
-  modelPath,
-  modelIos,
-  poster,
-}) => {
+const ModelViewerPage = ({ modelPath, modelIos, poster }) => {
   console.log("haah");
   return (
     <ModelViewer
+      buttonText={"Active AR"}
       buttonImage={"https://picsum.photos/200/200"}
-      buttonText={"View"}
       width={"100%"}
       height={"100%"}
       src={modelPath}

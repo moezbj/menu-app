@@ -10,6 +10,7 @@
   font-weight: 600;
   font-size: 32px;
   line-height: 100px;
+  margin: 5px 0px;
 }
 .header-detail {
   height: 60px;
@@ -39,12 +40,12 @@
   width: 100%;
 }
 .modal_body {
-  width: 80%;
+  width: 85%;
 }
 .description-item {
   display: flex;
   justify-content: space-between;
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 .description-item .description-name {
@@ -67,8 +68,7 @@
 }
 
 .btn-container {
-  position: absolute;
-  bottom: 30px;
+  margin-top: 30px;
 }
 .btn-order {
   width: 279px;
