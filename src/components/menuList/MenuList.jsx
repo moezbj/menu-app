@@ -11,9 +11,7 @@ import "./menuList.css";
 const MenuList = () => {
   const navigate = useNavigate();
   const [itemSelected, setSelected] = useState(menu);
-  const [itemMenu, setItemMenu] = useState(menu);
   const onClickItem = (e) => {
-    setItemMenu(e);
     onNavigate(e);
   };
   const filters = [
