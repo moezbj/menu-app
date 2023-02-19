@@ -1,7 +1,6 @@
 .section-title {
   color: #fff;
   padding-left: 20px;
-  
 }
 .justify-content-center {
   display: flex;
@@ -33,6 +32,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0px 20px 30px rgba(211, 209, 216, 0.251);
 }
 
 .menu #menu-flters li:hover,
@@ -59,18 +59,24 @@
   box-shadow: 18.2143px 18.2143px 36.4286px rgba(211, 209, 216, 0.25);
   border-radius: 18.2143px;
   margin: 15px 0px;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
 }
 
 .menu .menu-content {
-  overflow: hidden;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  margin-top: 27px;
+  flex: 1;
+  height: 148px;
 }
 .menu .menu-content .img-food {
   border-radius: 18.2143px;
   width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 53px;
+  border-bottom-left-radius: 18.2143px;
+  border-bottom-right-radius: 18.2143px;
 }
 
 .menu .menu-ingredients {
@@ -78,106 +84,47 @@
   font-size: 14px;
   font-family: "Comic Neue", sans-serif;
   line-height: 22px;
-  background-color: #ffb03b;
-  color: #fff;
-  height: 70px;
-  border-radius: 18.2143px;
+  color: #444444;
+  height: 80px;
   padding: 4px;
+  background-color: #fff;
+  z-index: 1;
+}
+.titleIngredients {
+  font-weight: 100;
+  font-size: 18.2143px;
+  line-height: 21px;
+  color: #000000;
+  margin: 5px 0px;
+  padding-left: 10px;
+}
+.descriptionIngredients {
+  font-weight: 400;
+  font-size: 14.5714px;
+  line-height: 20px;
+  color: #5b5b5e;
+  padding-left: 10px;
+}
+.price-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 72px;
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  background-color: #ffffff;
+  border-radius: 18px;
+}
+.price-container .price-item {
+  color: #111719;
 }
 .menu-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.modal-container {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 3;
-  background: linear-gradient(214.16deg, #0b0f0e 48.05%, #212226 98.73%);
-}
-.modal-container h1 {
-  color: #fff;
-  text-align: center;
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 100px;
-}
-
-.icon_close {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ffb03b;
-  cursor: pointer;
-  margin-top: 20px;
-  margin-left: 20px;
-}
-
-.icon_close span {
-  font-size: 18px;
-  font-weight: bolder;
-  color: #fff;
-}
-.modal-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-.modal_body {
-  width: 80%;
-}
-.description-item {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 100px;
-}
-
-.description-item .description-name {
-  color: #dcdce4;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 30px;
-}
-.description-item .description-price {
-  color: #ff7b2c;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 20px;
-}
-.description-text {
-  color: #dcdce4;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
-}
-.btn-order {
-  width: 279px;
-  height: 54px;
-  background: linear-gradient(270deg, #db8f39 0%, #efb159 100%);
-  border-radius: 16px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 16px 24px;
-  gap: 8px;
-  border: none;
-  margin-top: 40px;
-}
-.btn-order span {
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 22px;
-  color: #ffffff;
 }
 
 @media (max-width: 992px) {

@@ -1,0 +1,92 @@
+.modal-container {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(214.16deg, #0b0f0e 48.05%, #212226 98.73%);
+  position: relative;
+}
+.modal-container h1 {
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100px;
+}
+.header-detail {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+.icon_close {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffb03b;
+  cursor: pointer;
+}
+
+.icon_close button {
+  border: none;
+  background-color: transparent;
+}
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.modal_body {
+  width: 80%;
+}
+.description-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.description-item .description-name {
+  color: #dcdce4;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+}
+.description-item .description-price {
+  color: #ff7b2c;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 20px;
+}
+.description-text {
+  color: #dcdce4;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.btn-container {
+  position: absolute;
+  bottom: 30px;
+}
+.btn-order {
+  width: 279px;
+  height: 54px;
+  background: linear-gradient(270deg, #db8f39 0%, #efb159 100%);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  gap: 8px;
+  border: none;
+  margin-top: 40px;
+}
+.btn-order span {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 22px;
+  color: #ffffff;
+}

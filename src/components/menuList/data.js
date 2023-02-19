@@ -10,6 +10,18 @@ import Plat1 from "../../assets/MENU/plat/burger.webp";
 import plat2 from "../../assets/MENU/plat/sfefed.webp";
 import plat3 from "../../assets/MENU/plat/steak.webp";
 
+import CakeItem1 from "../../assets/MENU/desert/cake1-1.jpg";
+import CakeItem2 from "../../assets/MENU/desert/cake2-2.jpg";
+import CakeItem3 from "../../assets/MENU/desert/cake3-3.jpg";
+
+import PizzaItem1 from "../../assets/MENU/pizza/pizza-1.jpg";
+import PizzaItem2 from "../../assets/MENU/pizza/pizza-2.jpg";
+import PizzaItem3 from "../../assets/MENU/pizza/pizza.jpg";
+
+import PlatItem1 from "../../assets/MENU/plat/burger.jpg";
+import platItem2 from "../../assets/MENU/plat/sfefed.jpg";
+import platItem3 from "../../assets/MENU/plat/steak.jpg";
+
 import cakeModel1 from "../../assets/MENU/desert/cake1.glb";
 import cakeModel2 from "../../assets/MENU/desert/cake2.glb";
 import cakeModel3 from "../../assets/MENU/desert/cake3.glb";
@@ -29,6 +41,7 @@ const Pizza = [
     price: "$8.95",
     description: "la tomate, la mozzarella et le basilic",
     img: Pizza1,
+    imgItem: PizzaItem1,
     model: pizzaModel1,
   },
   {
@@ -37,6 +50,7 @@ const Pizza = [
     price: "$9.95",
     description: "des olives noires, des artichauts et du jambon",
     img: Pizza2,
+    imgItem: PizzaItem2,
     model: pizzaModel2,
   },
   {
@@ -45,6 +59,7 @@ const Pizza = [
     price: "$9.95",
     description: "Celui-ci est à base de saucisse fraîche et de salami",
     img: Pizza3,
+    imgItem: PizzaItem3,
     model: pizzaModel3,
   },
 ];
@@ -55,6 +70,7 @@ const Desert = [
     price: "$5.95",
     description: "Lorem, deren, trataro, filede, nerada",
     img: Cake1,
+    imgItem: CakeItem1,
     model: cakeModel1,
   },
   {
@@ -64,6 +80,7 @@ const Desert = [
     description:
       " A delicate crab cake served on a toasted roll with lettuce andtartar sauce",
     img: Cake2,
+    imgItem: CakeItem2,
     model: cakeModel2,
   },
   {
@@ -72,6 +89,7 @@ const Desert = [
     price: "$4.95",
     description: " Lorem, deren, trataro, filede, nerada",
     img: Cake3,
+    imgItem: CakeItem3,
     model: cakeModel3,
   },
 ];
@@ -83,6 +101,7 @@ const Plat = [
     description:
       " Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll",
     img: Plat1,
+    imgItem: PlatItem1,
     model: platModel1,
   },
   {
@@ -92,6 +111,7 @@ const Plat = [
     description:
       "Grilled chicken with provolone, artichoke hearts, and roasted red pesto",
     img: plat2,
+    imgItem: platItem2,
     model: platModel2,
   },
   {
@@ -100,6 +120,7 @@ const Plat = [
     price: "$6.95",
     description: "Lorem, deren, trataro, filede, nerada",
     img: plat3,
+    imgItem: platItem3,
     model: platModel3,
   },
 ];
