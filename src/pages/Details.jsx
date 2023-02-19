@@ -33,7 +33,7 @@ const Details = () => {
           <div
             style={{
               width: "100%",
-              height: 250,
+              height: 300,
             }}
           >
             <ModelViewer modelPath={model} poster={img} modelIos={modelIos} />
