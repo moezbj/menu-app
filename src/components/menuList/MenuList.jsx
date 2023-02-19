@@ -37,7 +37,7 @@ const MenuList = () => {
   };
 
   return (
-    <section id="menu" className="menu">
+    <div id="menu" className="menu">
       <div className="container-menu">
         <div className="section-title">
           <h2>What would you like to order</h2>
@@ -69,7 +69,7 @@ const MenuList = () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -6,6 +6,9 @@
   display: flex;
   justify-content: center;
 }
+.menu {
+  width: 100%;
+}
 .menu #menu-flters {
   padding: 0;
   margin: 0 auto 0 auto;
@@ -61,7 +64,7 @@
   margin: 15px 0px;
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 85%;
 }
 
 .menu .menu-content {
@@ -130,7 +133,6 @@
 @media (max-width: 992px) {
   .specials .nav-link {
     border: 0;
-    padding: 15px;
   }
 
   .specials .nav-link.active {
