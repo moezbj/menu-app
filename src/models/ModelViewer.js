@@ -8,7 +8,7 @@ const ModelViewerPage = ({ modelPath, modelIos, poster }) => {
   console.log("haah");
   return (
     <ModelViewer
-      buttonText={"Active AR"}
+      buttonText={"AR"}
       width={"100%"}
       height={"100%"}
       src={modelPath}
