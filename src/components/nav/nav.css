@@ -4,6 +4,7 @@
   align-items: center;
   width: 50%;
   overflow: scroll;
+  height: 100%;
 }
 
 .open-nav {

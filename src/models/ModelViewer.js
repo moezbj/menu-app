@@ -1,14 +1,17 @@
 import React from "react";
 import ModelViewer from "react-ar-viewer";
-import "./model.css";
 import "react-ar-viewer/dist/index.css";
-import ar from '../assets/img/ar1.svg'
-
-const ModelViewerPage = ({ modelPath, modelIos, poster }) => {
+import './model.css'
+const ModelViewerPage = ({
+  modelPath,
+  modelIos,
+  poster,
+}) => {
   console.log("haah");
   return (
     <ModelViewer
-      buttonText={"AR"}
+      buttonImage={"https://picsum.photos/200/200"}
+      buttonText={"Ar"}
       width={"100%"}
       height={"100%"}
       src={modelPath}
@@ -23,7 +26,6 @@ const ModelViewerPage = ({ modelPath, modelIos, poster }) => {
       shadowSoftness={1}
       shadowIntensity={1}
       autoPlay={true}
-      buttonLogo={ar}
     />
   );
 };

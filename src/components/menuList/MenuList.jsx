@@ -69,7 +69,6 @@ const MenuList = () => {
             </ul>
           </div>
         </div>
-
         <div className="menu-container">
           {itemSelected.map((e, i) => (
             <MenuItem
