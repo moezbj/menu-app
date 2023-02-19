@@ -21,8 +21,8 @@ body {
 }
 .full {
   position: relative;
-  height: 350px;
-  width: 350px;
+  height: 300px;
+  width: 300px;
 }
 .App-logo {
   pointer-events: none;

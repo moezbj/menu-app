@@ -8,7 +8,6 @@ const ModelViewerPage = ({ modelPath, modelIos, poster }) => {
   return (
     <ModelViewer
       buttonText={"Active AR"}
-      buttonImage={"https://picsum.photos/200/200"}
       width={"100%"}
       height={"100%"}
       src={modelPath}
