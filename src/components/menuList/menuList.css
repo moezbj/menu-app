@@ -1,6 +1,7 @@
 .section-title {
   color: #fff;
   padding-left: 20px;
+  margin: 0;
 }
 .justify-content-center {
   display: flex;
@@ -39,7 +40,7 @@
 }
 
 .menu #menu-flters li:hover,
-.menu #menu-flters li.filter-active {
+.filter-active {
   color: #fff;
   background: #ffb03b;
 }
@@ -57,18 +58,16 @@
 .menu-item {
   height: 248px;
   cursor: pointer;
-  overflow: hidden;
   background: #ffffff;
   box-shadow: 18.2143px 18.2143px 36.4286px rgba(211, 209, 216, 0.25);
-  border-radius: 18.2143px;
-  margin: 15px 0px;
+  border-radius: 18px;
+  margin: 20px 0px;
   display: flex;
   flex-direction: column;
   width: 85%;
 }
 
 .menu .menu-content {
-  flex: 1;
   height: 148px;
 }
 .menu .menu-content .img-food {
@@ -92,6 +91,8 @@
   padding: 4px;
   background-color: #fff;
   z-index: 1;
+  border-radius: 18px;
+
 }
 .titleIngredients {
   font-weight: 100;
@@ -128,6 +129,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  height: calc(100vh - 190px);
+  overflow: scroll;
+  padding: 20px 0px;
+
 }
 
 @media (max-width: 992px) {
