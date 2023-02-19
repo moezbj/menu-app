@@ -2,6 +2,7 @@ import React from "react";
 import ModelViewer from "react-ar-viewer";
 import "./model.css";
 import "react-ar-viewer/dist/index.css";
+import ar from '../assets/img/ar1.svg'
 
 const ModelViewerPage = ({ modelPath, modelIos, poster }) => {
   console.log("haah");
@@ -22,6 +23,7 @@ const ModelViewerPage = ({ modelPath, modelIos, poster }) => {
       shadowSoftness={1}
       shadowIntensity={1}
       autoPlay={true}
+      buttonLogo={ar}
     />
   );
 };
