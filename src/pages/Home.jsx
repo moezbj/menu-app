@@ -8,9 +8,9 @@ const App = () => {
     <div className="container">
       <div className="child">
         <div className={"full"}>
-          <div className="circle circle1"></div>
+          {/* <div className="circle circle1"></div>
           <div className="circle circle2"></div>
-          <div className="circle circle3"></div>
+          <div className="circle circle3"></div> */}
           <img src={logo} className={"App-logo"} alt="logo" />
         </div>
         <h3 className="text_white">Satisfying Taste</h3>
