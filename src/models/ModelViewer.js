@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import * as hands from "@mediapipe/hands";
 import { Camera } from "@mediapipe/camera_utils";
 import ARViewer from "react-ar-viewer"; // Adjust import based on actual library usage
+import "react-ar-viewer/dist/index.css";
 
 const App = (modelPath, modelIos, poster) => {
   const videoRef = useRef(null);
@@ -59,7 +60,7 @@ const App = (modelPath, modelIos, poster) => {
       <video ref={videoRef} style={{ display: "none" }} autoPlay></video>
       <canvas
         ref={canvasRef}
-        width="640"
+        width="320"
         height="480"
         style={{ position: "absolute", top: 0, left: 0, zIndex: 1 }}
       ></canvas>
