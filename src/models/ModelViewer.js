@@ -10,27 +10,29 @@ const App = (modelPath, modelIos, poster) => {
   const arViewerRef = useRef(null);
   const [handPosition, setHandPosition] = useState({ x: 0, y: 0 });
   const [cameraStream, setCameraStream] = useState(null);
+  const [cameraInitialized, setCameraInitialized] = useState(false);
 
   useEffect(() => {
     const initialize = async () => {
       try {
-        console.log('Initializing MediaPipe Hands...');
+        console.log("Initializing MediaPipe Hands...");
         const handsInstance = new hands.Hands({
-          locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands@${hands.VERSION}/${file}`,
+          locateFile: (file) =>
+            `https://cdn.jsdelivr.net/npm/@mediapipe/hands@${hands.VERSION}/${file}`,
         });
-  
+
         handsInstance.setOptions({
           maxNumHands: 1,
           modelComplexity: 1,
           minDetectionConfidence: 0.7,
           minTrackingConfidence: 0.7,
         });
-  
+
         handsInstance.onResults((results) => {
-          console.log('Results received:', results);
+          console.log("Results received:", results);
           if (results.multiHandLandmarks.length > 0) {
             const hand = results.multiHandLandmarks[0];
-            console.log('Hand landmarks:', hand);
+            console.log("Hand landmarks:", hand);
             const [indexFingerTip] = hand.slice(8, 9); // Tip of the index finger
             if (indexFingerTip) {
               setHandPosition({
@@ -40,31 +42,40 @@ const App = (modelPath, modelIos, poster) => {
             }
           }
         });
-  
-        const devices = await navigator.mediaDevices.enumerateDevices();
-        const videoDevices = devices.filter(device => device.kind === 'videoinput');
-        const rearCamera = videoDevices.find(device => device.label.toLowerCase().includes('back')) || videoDevices[0]; // Select rear camera or default to the first one
 
-        // Set up video stream
-        const stream = await navigator.mediaDevices.getUserMedia({
-          video: { deviceId: rearCamera.deviceId }
-        });
+        // Only initialize the camera if it hasn't been initialized yet
+        if (!cameraInitialized) {
+          const devices = await navigator.mediaDevices.enumerateDevices();
+          const videoDevices = devices.filter(
+            (device) => device.kind === "videoinput"
+          );
+          const rearCamera =
+            videoDevices.find((device) =>
+              device.label.toLowerCase().includes("back")
+            ) || videoDevices[0]; // Select rear camera or default to the first one
 
-        videoRef.current.srcObject = stream;
-        setCameraStream(stream);
+          // Set up video stream
+          const stream = await navigator.mediaDevices.getUserMedia({
+            video: { deviceId: rearCamera.deviceId },
+          });
 
-        const video = videoRef.current;
-        const camera = new Camera(video, {
-          onFrame: async () => {
-            await handsInstance.send({ image: video });
-          },
-          width: 340,
-          height: 480,
-        });
+          videoRef.current.srcObject = stream;
+          setCameraStream(stream);
+          setCameraInitialized(true);
 
-        camera.start();
+          const video = videoRef.current;
+          const camera = new Camera(video, {
+            onFrame: async () => {
+              await handsInstance.send({ image: video });
+            },
+            width: 640,
+            height: 480,
+          });
+
+          camera.start();
+        }
       } catch (error) {
-        console.error('Error initializing MediaPipe Hands:', error);
+        console.error("Error initializing MediaPipe Hands:", error);
       }
     };
 
@@ -73,11 +84,10 @@ const App = (modelPath, modelIos, poster) => {
     return () => {
       // Cleanup
       if (cameraStream) {
-        cameraStream.getTracks().forEach(track => track.stop());
+        cameraStream.getTracks().forEach((track) => track.stop());
       }
     };
-  }, [cameraStream]);
-  
+  }, [cameraStream, cameraInitialized]);
 
   return (
     <div
@@ -105,7 +115,6 @@ const App = (modelPath, modelIos, poster) => {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundColor: "rgba(255, 0, 0, 0.5)", // Semi-transparent red
           zIndex: 1,
         }}
       ></canvas>
