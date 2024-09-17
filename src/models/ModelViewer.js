@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { Camera } from "@mediapipe/camera_utils";
 import { Hands } from "@mediapipe/hands";
 import * as THREE from "three";
-import { ARViewer } from "react-ar-viewer";
+import  ARViewer  from "react-ar-viewer";
 
 const HandTrackingModel = (modelPath, modelIos, poster) => {
   const videoRef = useRef(null);
@@ -71,6 +71,7 @@ const HandTrackingModel = (modelPath, modelIos, poster) => {
         src={modelPath} // Path to your .glb file
         style={{ width: "100%", height: "100%" }}
         scale={1}
+        arPlacement="wall"
         ref={modelRef}
       />
     </div>
