@@ -4,18 +4,18 @@ import { Camera } from "@mediapipe/camera_utils";
 import ARViewer from "react-ar-viewer"; // Adjust import based on actual library usage
 import "react-ar-viewer/dist/index.css";
 
-const App = (modelPath, modelIos, poster) => {
+const App = (modelPath) => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const arViewerRef = useRef(null);
   const [handPosition, setHandPosition] = useState({ x: 0, y: 0 });
-  const [cameraStream, setCameraStream] = useState(null);
   const [cameraInitialized, setCameraInitialized] = useState(false);
+  const [cameraStream, setCameraStream] = useState(null);
 
   useEffect(() => {
     const initialize = async () => {
       try {
-        console.log("Initializing MediaPipe Hands...");
+        // Initialize MediaPipe Hands
         const handsInstance = new hands.Hands({
           locateFile: (file) =>
             `https://cdn.jsdelivr.net/npm/@mediapipe/hands@${hands.VERSION}/${file}`,
@@ -29,10 +29,8 @@ const App = (modelPath, modelIos, poster) => {
         });
 
         handsInstance.onResults((results) => {
-          console.log("Results received:", results);
           if (results.multiHandLandmarks.length > 0) {
             const hand = results.multiHandLandmarks[0];
-            console.log("Hand landmarks:", hand);
             const [indexFingerTip] = hand.slice(8, 9); // Tip of the index finger
             if (indexFingerTip) {
               setHandPosition({
@@ -43,7 +41,6 @@ const App = (modelPath, modelIos, poster) => {
           }
         });
 
-        // Only initialize the camera if it hasn't been initialized yet
         if (!cameraInitialized) {
           // Get camera devices
           const devices = await navigator.mediaDevices.enumerateDevices();
@@ -69,8 +66,8 @@ const App = (modelPath, modelIos, poster) => {
             onFrame: async () => {
               await handsInstance.send({ image: video });
             },
-            width: 320,
-            height: 320,
+            width: 640,
+            height: 480,
           });
 
           camera.start();
@@ -108,14 +105,15 @@ const App = (modelPath, modelIos, poster) => {
       ></video>
       <canvas
         ref={canvasRef}
-        width="320"
-        height="320"
+        width="640"
+        height="480"
         style={{
           position: "absolute",
           top: 0,
           left: 0,
           width: "100%",
           height: "100%",
+          backgroundColor: "rgba(255, 0, 0, 0.5)", // Semi-transparent red
           zIndex: 1,
         }}
       ></canvas>
