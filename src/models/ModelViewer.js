@@ -5,7 +5,7 @@ import ARViewer from "react-ar-viewer"; // Adjust import based on actual library
 import "react-ar-viewer/dist/index.css";
 
 const App = (modelPath, modelIos, poster) => {
-  const videoRef = useRef(null);
+/*   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const arViewerRef = useRef(null);
   const [handPosition, setHandPosition] = useState({ x: 0, y: 0 });
@@ -25,8 +25,8 @@ const App = (modelPath, modelIos, poster) => {
       });
   } else {
     console.error("getUserMedia not supported");
-  }
-  useEffect(() => {
+  } */
+/*   useEffect(() => {
     const initialize = async () => {
       // Initialize MediaPipe Hands
       const handsInstance = new hands.Hands({
@@ -69,12 +69,11 @@ const App = (modelPath, modelIos, poster) => {
     };
 
     initialize();
-  }, []);
+  }, []); */
 
   return (
     <div style={{ position: "relative", width: "100%", height: "100%" }}>
       <ARViewer
-        ref={arViewerRef}
         buttonImage={"https://picsum.photos/200/200"}
         buttonText={"View"}
         width={"100%"}
@@ -92,13 +91,7 @@ const App = (modelPath, modelIos, poster) => {
         shadowSoftness={1}
         shadowIntensity={1}
         autoPlay={true}
-        style={{
-          position: "absolute",
-          top: `${handPosition.y}px`,
-          left: `${handPosition.x}px`,
-          transform: "translate(-50%, -50%)",
-          zIndex: 0,
-        }}
+   
       />
     </div>
   );
