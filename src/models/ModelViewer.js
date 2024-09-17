@@ -57,13 +57,13 @@ const App = (modelPath, modelIos, poster) => {
 
   return (
     <div style={{ position: "relative", width: "100%", height: "100%" }}>
-      <video ref={videoRef} style={{ display: "none" }} autoPlay></video>
+  {/*     <video ref={videoRef} style={{ display: "none" }} autoPlay></video>
       <canvas
         ref={canvasRef}
         width="320"
         height="480"
         style={{ position: "absolute", top: 0, left: 0, zIndex: 1 }}
-      ></canvas>
+      ></canvas> */}
       <ARViewer
         ref={arViewerRef}
         buttonImage={"https://picsum.photos/200/200"}
