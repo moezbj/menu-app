@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as hands from "@mediapipe/hands";
 import { Camera } from "@mediapipe/camera_utils";
-import  ARViewer  from "react-ar-viewer"; // Adjust import based on actual library usage
+import ARViewer from "react-ar-viewer"; // Adjust import based on actual library usage
 
-const App = () => {
+const App = (modelPath, modelIos, poster) => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const arViewerRef = useRef(null);
@@ -65,7 +65,23 @@ const App = () => {
       ></canvas>
       <ARViewer
         ref={arViewerRef}
-        modelUrl="/path/to/your/model.glb"
+        buttonImage={"https://picsum.photos/200/200"}
+        buttonText={"View"}
+        width={"100%"}
+        height={"100%"}
+        src={modelPath}
+        modelIos={modelPath}
+        poster={poster}
+        cameraControls={true}
+        ar={true}
+        arModes="quick-look scene-viewer webxr"
+        arScale="auto"
+        cameraTarget={"0m 0m 0m"}
+        cameraOrbit={"0 deg 0deg 0%"}
+        exposure={1}
+        shadowSoftness={1}
+        shadowIntensity={1}
+        autoPlay={true}
         style={{
           position: "absolute",
           top: `${handPosition.y}px`,
