@@ -56,16 +56,36 @@ const App = (modelPath, modelIos, poster) => {
   }, []);
 
   return (
-    <div style={{ position: "relative", width: "100%", height: "100%" }}>
-      <video ref={videoRef} style={{ display: "none" }} autoPlay></video>
+    <div
+      style={{
+        position: "relative",
+        width: "100vw",
+        height: "100vh",
+        overflow: "hidden",
+      }}
+    >
+      <video
+        ref={videoRef}
+        style={{ display: "none" }}
+        autoPlay
+        playsInline
+        muted
+      ></video>
       <canvas
         ref={canvasRef}
         width="320"
         height="480"
-        style={{ position: "absolute", top: 0, left: 0, zIndex: 1 }}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: 1,
+        }}
       ></canvas>
       <ARViewer
-         ref={arViewerRef}
+        ref={arViewerRef}
         modelUrl={modelPath}
         poster={poster}
         style={{
@@ -73,7 +93,10 @@ const App = (modelPath, modelIos, poster) => {
           top: `${handPosition.y}px`,
           left: `${handPosition.x}px`,
           transform: 'translate(-50%, -50%)',
+          width: '100%',
+          height: '100%',
           zIndex: 0
+
         }}
       />
     </div>
