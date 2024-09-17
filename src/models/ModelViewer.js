@@ -4,138 +4,89 @@ import { Camera } from "@mediapipe/camera_utils";
 import ARViewer from "react-ar-viewer"; // Adjust import based on actual library usage
 import "react-ar-viewer/dist/index.css";
 
-const App = (modelPath) => {
+const App = (modelPath, modelIos, poster) => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const arViewerRef = useRef(null);
   const [handPosition, setHandPosition] = useState({ x: 0, y: 0 });
-  const [cameraInitialized, setCameraInitialized] = useState(false);
-  const [cameraStream, setCameraStream] = useState(null);
 
   useEffect(() => {
     const initialize = async () => {
-      try {
-        // Initialize MediaPipe Hands
-        const handsInstance = new hands.Hands({
-          locateFile: (file) =>
-            `https://cdn.jsdelivr.net/npm/@mediapipe/hands@${hands.VERSION}/${file}`,
-        });
+      // Initialize MediaPipe Hands
+      const handsInstance = new hands.Hands({
+        locateFile: (file) =>
+          `https://cdn.jsdelivr.net/npm/@mediapipe/hands@${hands.VERSION}/${file}`,
+      });
 
-        handsInstance.setOptions({
-          maxNumHands: 1,
-          modelComplexity: 1,
-          minDetectionConfidence: 0.7,
-          minTrackingConfidence: 0.7,
-        });
+      handsInstance.setOptions({
+        maxNumHands: 1,
+        modelComplexity: 1,
+        minDetectionConfidence: 0.7,
+        minTrackingConfidence: 0.7,
+      });
 
-        handsInstance.onResults((results) => {
-          if (results.multiHandLandmarks.length > 0) {
-            const hand = results.multiHandLandmarks[0];
-            const [indexFingerTip] = hand.slice(8, 9); // Tip of the index finger
-            if (indexFingerTip) {
-              setHandPosition({
-                x: indexFingerTip.x * canvasRef.current.width,
-                y: indexFingerTip.y * canvasRef.current.height,
-              });
-            }
+      handsInstance.onResults((results) => {
+        if (results.multiHandLandmarks.length > 0) {
+          const hand = results.multiHandLandmarks[0];
+          const [indexFingerTip] = hand.slice(8, 9); // Tip of the index finger
+
+          if (indexFingerTip) {
+            setHandPosition({
+              x: indexFingerTip.x * canvasRef.current.width,
+              y: indexFingerTip.y * canvasRef.current.height,
+            });
           }
-        });
-
-        if (!cameraInitialized) {
-          // Get camera devices
-          const devices = await navigator.mediaDevices.enumerateDevices();
-          const videoDevices = devices.filter(
-            (device) => device.kind === "videoinput"
-          );
-          const rearCamera =
-            videoDevices.find((device) =>
-              device.label.toLowerCase().includes("back")
-            ) ||
-            videoDevices.find((device) =>
-              device.label.toLowerCase().includes("rear")
-            ); // Select rear camera or default to the first one
-            if (!rearCamera) {
-              console.error('No rear camera found');
-              return;
-            }
-  
-            console.log('Selected camera:', rearCamera);
-          // Set up video stream
-          const stream = await navigator.mediaDevices.getUserMedia({
-            video: { deviceId: rearCamera.deviceId },
-          });
-
-          videoRef.current.srcObject = stream;
-          setCameraStream(stream);
-          setCameraInitialized(true);
-
-          const video = videoRef.current;
-          const camera = new Camera(video, {
-            onFrame: async () => {
-              await handsInstance.send({ image: video });
-            },
-            width: 640,
-            height: 480,
-          });
-
-          camera.start();
         }
-      } catch (error) {
-        console.error("Error initializing MediaPipe Hands:", error);
-      }
+      });
+
+      // Set up video stream
+      const video = videoRef.current;
+      const camera = new Camera(video, {
+        onFrame: async () => {
+          await handsInstance.send({ image: video });
+        },
+        width: 640,
+        height: 480,
+      });
+
+      camera.start();
     };
 
     initialize();
-
-    return () => {
-      // Cleanup
-      if (cameraStream) {
-        cameraStream.getTracks().forEach((track) => track.stop());
-      }
-    };
-  }, [cameraStream, cameraInitialized]);
+  }, []);
 
   return (
-    <div
-      style={{
-        position: "relative",
-        width: "100vw",
-        height: "100vh",
-        overflow: "hidden",
-      }}
-    >
-      <video
-        ref={videoRef}
-        style={{ width: "100%", height: "auto" }}
-        autoPlay
-        playsInline
-        muted
-      ></video>
+    <div style={{ position: "relative", width: "100%", height: "100%" }}>
       <canvas
         ref={canvasRef}
-        width="640"
+        width="320"
         height="480"
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          backgroundColor: "rgba(255, 0, 0, 0.5)", // Semi-transparent red
-          zIndex: 1,
-        }}
+        style={{ position: "absolute", top: 0, left: 0, zIndex: 1 }}
       ></canvas>
       <ARViewer
         ref={arViewerRef}
-        modelUrl={modelPath}
+        buttonImage={"https://picsum.photos/200/200"}
+        buttonText={"View"}
+        width={"100%"}
+        height={"100%"}
+        src={modelPath}
+        modelIos={modelPath}
+        poster={poster}
+        cameraControls={true}
+        ar={true}
+        arModes="quick-look scene-viewer webxr"
+        arScale="auto"
+        cameraTarget={"0m 0m 0m"}
+        cameraOrbit={"0 deg 0deg 0%"}
+        exposure={1}
+        shadowSoftness={1}
+        shadowIntensity={1}
+        autoPlay={true}
         style={{
           position: "absolute",
           top: `${handPosition.y}px`,
           left: `${handPosition.x}px`,
           transform: "translate(-50%, -50%)",
-          width: "100%",
-          height: "100%",
-          backgroundColor: "rgba(0, 255, 0, 0.5)", // Semi-transparent green
           zIndex: 0,
         }}
       />
