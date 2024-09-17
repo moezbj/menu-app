@@ -50,8 +50,16 @@ const App = (modelPath) => {
           const rearCamera =
             videoDevices.find((device) =>
               device.label.toLowerCase().includes("back")
-            ) || videoDevices[0]; // Select rear camera or default to the first one
-
+            ) ||
+            videoDevices.find((device) =>
+              device.label.toLowerCase().includes("rear")
+            ); // Select rear camera or default to the first one
+            if (!rearCamera) {
+              console.error('No rear camera found');
+              return;
+            }
+  
+            console.log('Selected camera:', rearCamera);
           // Set up video stream
           const stream = await navigator.mediaDevices.getUserMedia({
             video: { deviceId: rearCamera.deviceId },
