@@ -49,10 +49,9 @@ const App = (modelPath, modelIos, poster) => {
           const videoDevices = devices.filter(
             (device) => device.kind === "videoinput"
           );
-          const rearCamera =
-            videoDevices.find((device) =>
-              device.label.toLowerCase().includes("back")
-            ) || videoDevices[0]; // Select rear camera or default to the first one
+          const rearCamera = videoDevices.find((device) =>
+            device.label.toLowerCase().includes("back")
+          ); // Select rear camera or default to the first one
 
           // Set up video stream
           const stream = await navigator.mediaDevices.getUserMedia({
@@ -68,7 +67,7 @@ const App = (modelPath, modelIos, poster) => {
             onFrame: async () => {
               await handsInstance.send({ image: video });
             },
-            width: 640,
+            width: 340,
             height: 480,
           });
 
