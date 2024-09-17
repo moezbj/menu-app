@@ -9,7 +9,23 @@ const App = (modelPath, modelIos, poster) => {
   const canvasRef = useRef(null);
   const arViewerRef = useRef(null);
   const [handPosition, setHandPosition] = useState({ x: 0, y: 0 });
-
+  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    // getUserMedia is supported
+    navigator.mediaDevices
+      .getUserMedia({ video: true })
+      .then((stream) => {
+        // Do something with the video stream
+        console.log("Camera stream started");
+        // Example: Attach the stream to a video element
+        const video = document.querySelector("video");
+        video.srcObject = stream;
+      })
+      .catch((error) => {
+        console.error("Error accessing camera:", error);
+      });
+  } else {
+    console.error("getUserMedia not supported");
+  }
   useEffect(() => {
     const initialize = async () => {
       // Initialize MediaPipe Hands
