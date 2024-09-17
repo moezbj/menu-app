@@ -9,6 +9,7 @@ const App = (modelPath, modelIos, poster) => {
   const canvasRef = useRef(null);
   const arViewerRef = useRef(null);
   const [handPosition, setHandPosition] = useState({ x: 0, y: 0 });
+  const [cameraStream, setCameraStream] = useState(null);
 
   useEffect(() => {
     const initialize = async () => {
@@ -40,24 +41,42 @@ const App = (modelPath, modelIos, poster) => {
           }
         });
   
+        const devices = await navigator.mediaDevices.enumerateDevices();
+        const videoDevices = devices.filter(device => device.kind === 'videoinput');
+        const rearCamera = videoDevices.find(device => device.label.toLowerCase().includes('back')) || videoDevices[0]; // Select rear camera or default to the first one
+
+        // Set up video stream
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: { deviceId: rearCamera.deviceId }
+        });
+
+        videoRef.current.srcObject = stream;
+        setCameraStream(stream);
+
         const video = videoRef.current;
         const camera = new Camera(video, {
           onFrame: async () => {
             await handsInstance.send({ image: video });
           },
-          width: 640,
+          width: 340,
           height: 480,
         });
-  
+
         camera.start();
-        console.log('Camera started.');
       } catch (error) {
         console.error('Error initializing MediaPipe Hands:', error);
       }
     };
-  
+
     initialize();
-  }, []);
+
+    return () => {
+      // Cleanup
+      if (cameraStream) {
+        cameraStream.getTracks().forEach(track => track.stop());
+      }
+    };
+  }, [cameraStream]);
   
 
   return (
@@ -78,7 +97,7 @@ const App = (modelPath, modelIos, poster) => {
       ></video>
       <canvas
         ref={canvasRef}
-        width="640"
+        width="340"
         height="480"
         style={{
           position: "absolute",
