@@ -12,48 +12,53 @@ const App = (modelPath, modelIos, poster) => {
 
   useEffect(() => {
     const initialize = async () => {
-      // Initialize MediaPipe Hands
-      const handsInstance = new hands.Hands({
-        locateFile: (file) =>
-          `https://cdn.jsdelivr.net/npm/@mediapipe/hands@${hands.VERSION}/${file}`,
-      });
-
-      handsInstance.setOptions({
-        maxNumHands: 1,
-        modelComplexity: 1,
-        minDetectionConfidence: 0.7,
-        minTrackingConfidence: 0.7,
-      });
-
-      handsInstance.onResults((results) => {
-        if (results.multiHandLandmarks.length > 0) {
-          const hand = results.multiHandLandmarks[0];
-          const [indexFingerTip] = hand.slice(8, 9); // Tip of the index finger
-
-          if (indexFingerTip) {
-            setHandPosition({
-              x: indexFingerTip.x * canvasRef.current.width,
-              y: indexFingerTip.y * canvasRef.current.height,
-            });
+      try {
+        console.log('Initializing MediaPipe Hands...');
+        const handsInstance = new hands.Hands({
+          locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands@${hands.VERSION}/${file}`,
+        });
+  
+        handsInstance.setOptions({
+          maxNumHands: 1,
+          modelComplexity: 1,
+          minDetectionConfidence: 0.7,
+          minTrackingConfidence: 0.7,
+        });
+  
+        handsInstance.onResults((results) => {
+          console.log('Results received:', results);
+          if (results.multiHandLandmarks.length > 0) {
+            const hand = results.multiHandLandmarks[0];
+            console.log('Hand landmarks:', hand);
+            const [indexFingerTip] = hand.slice(8, 9); // Tip of the index finger
+            if (indexFingerTip) {
+              setHandPosition({
+                x: indexFingerTip.x * canvasRef.current.width,
+                y: indexFingerTip.y * canvasRef.current.height,
+              });
+            }
           }
-        }
-      });
-
-      // Set up video stream
-      const video = videoRef.current;
-      const camera = new Camera(video, {
-        onFrame: async () => {
-          await handsInstance.send({ image: video });
-        },
-        width: 640,
-        height: 480,
-      });
-
-      camera.start();
+        });
+  
+        const video = videoRef.current;
+        const camera = new Camera(video, {
+          onFrame: async () => {
+            await handsInstance.send({ image: video });
+          },
+          width: 640,
+          height: 480,
+        });
+  
+        camera.start();
+        console.log('Camera started.');
+      } catch (error) {
+        console.error('Error initializing MediaPipe Hands:', error);
+      }
     };
-
+  
     initialize();
   }, []);
+  
 
   return (
     <div
@@ -66,14 +71,14 @@ const App = (modelPath, modelIos, poster) => {
     >
       <video
         ref={videoRef}
-        style={{ display: "none" }}
+        style={{ width: "100%", height: "auto" }}
         autoPlay
         playsInline
         muted
       ></video>
       <canvas
         ref={canvasRef}
-        width="320"
+        width="640"
         height="480"
         style={{
           position: "absolute",
@@ -81,22 +86,22 @@ const App = (modelPath, modelIos, poster) => {
           left: 0,
           width: "100%",
           height: "100%",
+          backgroundColor: "rgba(255, 0, 0, 0.5)", // Semi-transparent red
           zIndex: 1,
         }}
       ></canvas>
       <ARViewer
         ref={arViewerRef}
         modelUrl={modelPath}
-        poster={poster}
         style={{
-          position: 'absolute',
+          position: "absolute",
           top: `${handPosition.y}px`,
           left: `${handPosition.x}px`,
-          transform: 'translate(-50%, -50%)',
-          width: '100%',
-          height: '100%',
-          zIndex: 0
-
+          transform: "translate(-50%, -50%)",
+          width: "100%",
+          height: "100%",
+          backgroundColor: "rgba(0, 255, 0, 0.5)", // Semi-transparent green
+          zIndex: 0,
         }}
       />
     </div>
