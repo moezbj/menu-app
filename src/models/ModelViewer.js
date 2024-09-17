@@ -57,38 +57,23 @@ const App = (modelPath, modelIos, poster) => {
 
   return (
     <div style={{ position: "relative", width: "100%", height: "100%" }}>
-  {/*     <video ref={videoRef} style={{ display: "none" }} autoPlay></video>
+      <video ref={videoRef} style={{ display: "none" }} autoPlay></video>
       <canvas
         ref={canvasRef}
         width="320"
         height="480"
         style={{ position: "absolute", top: 0, left: 0, zIndex: 1 }}
-      ></canvas> */}
+      ></canvas>
       <ARViewer
-        ref={arViewerRef}
-        buttonImage={"https://picsum.photos/200/200"}
-        buttonText={"View"}
-        width={"100%"}
-        height={"100%"}
-        src={modelPath}
-        modelIos={modelPath}
+         ref={arViewerRef}
+        modelUrl={modelPath}
         poster={poster}
-        cameraControls={true}
-        ar={true}
-        arModes="quick-look scene-viewer webxr"
-        arScale="auto"
-        cameraTarget={"0m 0m 0m"}
-        cameraOrbit={"0 deg 0deg 0%"}
-        exposure={1}
-        shadowSoftness={1}
-        shadowIntensity={1}
-        autoPlay={true}
         style={{
-          position: "absolute",
+          position: 'absolute',
           top: `${handPosition.y}px`,
           left: `${handPosition.x}px`,
-          transform: "translate(-50%, -50%)",
-          zIndex: 0,
+          transform: 'translate(-50%, -50%)',
+          zIndex: 0
         }}
       />
     </div>
