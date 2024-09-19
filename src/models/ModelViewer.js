@@ -15,6 +15,7 @@ const ModelViewerPage = ({ modelPath, modelIos, poster }) => {
       poster={poster}
       cameraControls={true}
       ar={true}
+      arPlacement="wall"
       arModes="quick-look scene-viewer webxr"
       arScale="auto"
       cameraTarget={"0m 0m 0m"}
